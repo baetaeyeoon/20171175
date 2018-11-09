@@ -7,8 +7,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, fullscreen);
 		if (m_pWindow != 0)
 		{
+			
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
 		}
+		SDL_Surface* pTempSurface = SDL_LoadBMP
 	}
 	else {
 		return false;
