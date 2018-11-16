@@ -7,12 +7,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, fullscreen);
 		if (m_pWindow != 0)
 		{
-			
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
 		}
-		SDL_Surface* pTempSurface = SDL_LoadBMP
 	}
-	else {
+	else
+	{
 		return false;
 	}
 	return true;
@@ -23,16 +22,14 @@ void Game::render()
 	SDL_RenderClear(m_pRenderer);
 	SDL_RenderPresent(m_pRenderer);
 }
-
 void Game::clean()
- {
-	std::cout << "cleaning game\n";
+{
+	std::cout << "cleaning gmae\n";
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_Quit();
 }
-
-void Game::handleEnvents()
+void Game::handleEvents()
 {
 	SDL_Event event;
 	if (SDL_PollEvent(&event))
@@ -41,9 +38,9 @@ void Game::handleEnvents()
 		{
 		case SDL_QUIT:
 			m_bRunning = false;
-				break;
-			default:
-				break;
+			break;
+		default:
+			break;
 		}
 	}
 }
